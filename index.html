@@ -26,37 +26,17 @@
             width: 100%;
             background: #ffffff;
             border-radius: 24px;
-            padding: 48px 32px 40px;
+            padding: 40px 32px 36px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
             text-align: center;
         }
 
-        .avatar {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            background: #e8e8ed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin: 0 auto 20px;
-        }
-
-        .title {
-            font-size: 20px;
-            font-weight: 600;
+        .message {
+            font-size: 16px;
             color: #1c1c1e;
-            margin-bottom: 6px;
-            letter-spacing: -0.3px;
-        }
-
-        .subtitle {
-            font-size: 15px;
-            color: #8e8e93;
-            font-weight: 400;
+            line-height: 1.6;
             margin-bottom: 32px;
-            line-height: 1.5;
+            font-weight: 400;
         }
 
         .btn-group {
@@ -104,43 +84,40 @@
             font-size: 14px;
         }
 
-        .btn-whatsapp:hover {
+        .btn-whatsapp {
             background: #e8f5ee;
-            border-color: rgba(37, 211, 102, 0.2);
+            border-color: rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            background: #d4ede3;
+            border-color: #25d366;
         }
 
-        .btn-instagram:hover {
+        .btn-instagram {
             background: #faf0f0;
             border-color: rgba(225, 48, 108, 0.15);
         }
+        .btn-instagram:hover {
+            background: #f5e0e0;
+            border-color: #e4405f;
+        }
 
-        .btn-telegram:hover {
+        .btn-telegram {
             background: #e8f2f8;
             border-color: rgba(0, 136, 204, 0.15);
         }
-
-        .footer {
-            margin-top: 28px;
-            color: #c7c7cc;
-            font-size: 12px;
-            letter-spacing: 0.2px;
+        .btn-telegram:hover {
+            background: #d4e6f0;
+            border-color: #0088cc;
         }
 
         @media (max-width: 440px) {
             .card {
-                padding: 36px 20px 32px;
+                padding: 32px 20px 28px;
                 border-radius: 20px;
             }
-            .avatar {
-                width: 64px;
-                height: 64px;
-                font-size: 28px;
-            }
-            .title {
-                font-size: 18px;
-            }
-            .subtitle {
-                font-size: 14px;
+            .message {
+                font-size: 15px;
             }
             .btn {
                 padding: 14px 16px;
@@ -155,7 +132,10 @@
 
         @media (max-width: 360px) {
             .card {
-                padding: 28px 16px 24px;
+                padding: 24px 16px 20px;
+            }
+            .message {
+                font-size: 14px;
             }
             .btn {
                 padding: 12px 14px;
@@ -180,10 +160,10 @@
 
 <div class="card">
 
-    <div class="avatar">👤</div>
-
-    <h1 class="title">Contact</h1>
-    <p class="subtitle">contact me on any preferred platform</p>
+    <p class="message">
+        The quickest way to reach me is via WhatsApp.<br />
+        However, if you prefer another platform, you are welcome to choose it.
+    </p>
 
     <div class="btn-group">
 
@@ -218,8 +198,6 @@
         </a>
 
     </div>
-
-    <div class="footer">—</div>
 
 </div>
 
