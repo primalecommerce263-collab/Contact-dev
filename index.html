@@ -1,202 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>Contact</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Store Review · Primal Lux Agency</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f5f5f7;
-            padding: 20px;
-        }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #ffffff;
+      color: #1a1e1c;
+      line-height: 1.6;
+      padding: 1.2rem 1rem 0;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .card {
-            max-width: 400px;
-            width: 100%;
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 40px 32px 36px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-            text-align: center;
-        }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0.25rem 0 2.5rem;
+    }
 
-        .message {
-            font-size: 16px;
-            color: #1c1c1e;
-            line-height: 1.6;
-            margin-bottom: 8px;
-            font-weight: 400;
-        }
+    /* ---------- TYPOGRAPHY (refined) ---------- */
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
 
-        .sub-message {
-            font-size: 15px;
-            color: #8e8e93;
-            line-height: 1.6;
-            margin-bottom: 32px;
-            font-weight: 400;
-        }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.6rem;
+      color: #0f1a16;
+    }
 
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    h2 {
+      font-size: 1.7rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1rem;
+      color: #14211c;
+    }
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 16px 20px;
-            border-radius: 14px;
-            font-size: 16px;
-            font-weight: 500;
-            text-decoration: none;
-            color: #1c1c1e;
-            background: #f5f5f7;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-            -webkit-tap-highlight-color: transparent;
-        }
+    .subhead {
+      font-size: 1.15rem;
+      color: #2a3a33;
+      max-width: 620px;
+      font-weight: 400;
+    }
 
-        .btn:active {
-            transform: scale(0.98);
-        }
+    /* ---------- CARDS / SHADOWS (premium feel) ---------- */
+    .card {
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.06), 0 8px 24px -6px rgba(0, 0, 0, 0.02);
+      padding: 1.8rem 1.8rem;
+      transition: box-shadow 0.25s ease, transform 0.2s ease;
+      margin-bottom: 1.8rem;
+      border: 1px solid #f0f4f2;
+    }
 
-        .btn .icon {
-            font-size: 20px;
-            line-height: 1;
-            width: 24px;
-            text-align: center;
-            flex-shrink: 0;
-        }
+    .card:hover {
+      box-shadow: 0 28px 56px -14px rgba(0, 0, 0, 0.08), 0 10px 28px -8px rgba(0, 0, 0, 0.02);
+      transform: translateY(-2px);
+    }
 
-        .btn .label {
-            flex: 1;
-            text-align: left;
-        }
+    /* ---------- SECTIONS ---------- */
+    .section {
+      margin-bottom: 3.2rem;
+    }
 
-        .btn .arrow {
-            color: #8e8e93;
-            font-size: 14px;
-        }
+    /* ---------- HERO ---------- */
+    .hero {
+      padding-top: 0.2rem;
+    }
 
-        .btn-whatsapp {
-            background: #e8f5ee;
-            border-color: rgba(37, 211, 102, 0.3);
-        }
-        .btn-whatsapp:hover {
-            background: #d4ede3;
-            border-color: #25d366;
-        }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #eaf5ef;
+      color: #136b3a;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 0.3rem 1rem 0.3rem 0.9rem;
+      border-radius: 40px;
+      margin-bottom: 1.2rem;
+      border: 1px solid #c3dfd0;
+      letter-spacing: 0.2px;
+    }
 
-        .btn-telegram {
-            background: #e8f2f8;
-            border-color: rgba(0, 136, 204, 0.15);
-        }
-        .btn-telegram:hover {
-            background: #d4e6f0;
-            border-color: #0088cc;
-        }
+    .badge i {
+      font-size: 0.7rem;
+      color: #1a8a4a;
+    }
 
-        @media (max-width: 440px) {
-            .card {
-                padding: 32px 20px 28px;
-                border-radius: 20px;
-            }
-            .message {
-                font-size: 15px;
-            }
-            .sub-message {
-                font-size: 14px;
-            }
-            .btn {
-                padding: 14px 16px;
-                font-size: 15px;
-                border-radius: 12px;
-            }
-            .btn .icon {
-                font-size: 18px;
-                width: 22px;
-            }
-        }
+    /* ---------- PROTECTION NOTE (privacy) ---------- */
+    .protected-note {
+      background: #f6fbf9;
+      border-left: 6px solid #1b8a4a;
+      border-radius: 24px;
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
 
-        @media (max-width: 360px) {
-            .card {
-                padding: 24px 16px 20px;
-            }
-            .message {
-                font-size: 14px;
-            }
-            .sub-message {
-                font-size: 13px;
-            }
-            .btn {
-                padding: 12px 14px;
-                font-size: 14px;
-                border-radius: 10px;
-            }
-            .btn .icon {
-                font-size: 16px;
-                width: 20px;
-            }
-        }
+    .protected-note i {
+      color: #1b8a4a;
+      font-size: 1.8rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
 
-        @supports (padding: max(0px)) {
-            .card {
-                padding-left: max(32px, env(safe-area-inset-left));
-                padding-right: max(32px, env(safe-area-inset-right));
-            }
-        }
-    </style>
+    .protected-note h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.2rem;
+      color: #0e261e;
+    }
+
+    .protected-note p {
+      color: #1f3a30;
+      margin: 0;
+    }
+
+    /* ---------- 4-CARD GRID (what you receive) ---------- */
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    .grid-item {
+      background: #fafcfb;
+      border-radius: 24px;
+      padding: 1.2rem 0.6rem;
+      text-align: center;
+      border: 1px solid #e6eee9;
+      transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+    }
+
+    .grid-item:hover {
+      background: #f2f8f5;
+      border-color: #b7d5c4;
+      box-shadow: 0 8px 18px -6px rgba(0, 40, 20, 0.06);
+    }
+
+    .grid-item i {
+      font-size: 2rem;
+      color: #1a7a3e;
+      margin-bottom: 0.45rem;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    .grid-item:hover i {
+      transform: scale(1.06);
+    }
+
+    .grid-item h4 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+      color: #16231e;
+    }
+
+    .grid-item p {
+      font-size: 0.88rem;
+      color: #3b4f45;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* ---------- TRUST BADGES ---------- */
+    .trust-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem 2.5rem;
+      padding: 0.2rem 0;
+    }
+
+    .trust-list span {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 500;
+      color: #1b2e26;
+      font-size: 1rem;
+    }
+
+    .trust-list i {
+      color: #1b8a4a;
+      font-size: 1.2rem;
+      width: 1.6rem;
+      text-align: center;
+    }
+
+    /* ---------- WHATSAPP BUTTON (premium) ---------- */
+    .wa-btn-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 1.8rem 0 0.6rem;
+    }
+
+    .wa-btn {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 1rem 3rem;
+      border-radius: 80px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      box-shadow: 0 14px 28px -10px rgba(37, 211, 102, 0.4);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.3s;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.15);
+      animation: pulse-gentle 3s infinite ease-in-out;
+    }
+
+    .wa-btn i {
+      font-size: 1.9rem;
+    }
+
+    .wa-btn:hover {
+      background: #1fbd5a;
+      transform: scale(1.02);
+      box-shadow: 0 20px 40px -12px rgba(37, 211, 102, 0.5);
+    }
+
+    @keyframes pulse-gentle {
+      0% { box-shadow: 0 14px 28px -10px rgba(37, 211, 102, 0.35); }
+      50% { box-shadow: 0 20px 44px -10px rgba(37, 211, 102, 0.6); }
+      100% { box-shadow: 0 14px 28px -10px rgba(37, 211, 102, 0.35); }
+    }
+
+    .wa-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #3d554a;
+      margin-top: 0.3rem;
+      letter-spacing: 0.2px;
+    }
+
+    .wa-note i {
+      margin-right: 0.2rem;
+      opacity: 0.5;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #eaf0ec;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-item h4 {
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.15rem;
+      color: #0f231c;
+    }
+
+    .faq-item h4 i {
+      color: #1b8a4a;
+      font-size: 1rem;
+      width: 1.6rem;
+      text-align: center;
+    }
+
+    .faq-item p {
+      color: #2f473c;
+      margin-left: 2.6rem;
+      font-size: 0.98rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer {
+      text-align: center;
+      padding: 2rem 0 0.6rem;
+      color: #4d655a;
+      font-size: 0.9rem;
+      border-top: 1px solid #e4ede8;
+      margin-top: 1.8rem;
+      letter-spacing: 0.2px;
+    }
+
+    /* ---------- FADE ANIMATIONS (scroll) ---------- */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.8s cubic-bezier(0.15, 0.9, 0.2, 1), transform 0.8s cubic-bezier(0.15, 0.9, 0.2, 1);
+    }
+
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- MOBILE FIRST TWEAKS ---------- */
+    @media (max-width: 540px) {
+      body { padding: 1rem 0.8rem 0; }
+      h1 { font-size: 1.7rem; }
+      h2 { font-size: 1.4rem; }
+      .subhead { font-size: 1rem; }
+      .grid-4 { gap: 0.7rem; }
+      .grid-item { padding: 1rem 0.4rem; }
+      .grid-item i { font-size: 1.6rem; }
+      .wa-btn { padding: 0.8rem 1.8rem; font-size: 1.1rem; width: 100%; justify-content: center; }
+      .wa-btn i { font-size: 1.6rem; }
+      .trust-list { gap: 0.5rem 1.2rem; }
+      .protected-note { flex-direction: column; align-items: flex-start; padding: 1.2rem; }
+      .card { padding: 1.3rem 1.2rem; }
+      .faq-item p { margin-left: 0; }
+      .faq-item h4 { gap: 0.5rem; }
+    }
+
+    @media (max-width: 400px) {
+      .grid-4 { grid-template-columns: 1fr; }
+      .trust-list { flex-direction: column; align-items: center; gap: 0.4rem; }
+    }
+
+    /* small helpers */
+    .icon-green { color: #1b8a4a; }
+    .mt-1 { margin-top: 0.4rem; }
+    .mb-1 { margin-bottom: 0.6rem; }
+    .text-center { text-align: center; }
+    .fw-500 { font-weight: 500; }
+  </style>
 </head>
 <body>
+<div class="container">
 
-<div class="card">
-
-    <p class="message">
-        The quickest way to reach me is via WhatsApp.
+  <!-- ===== HERO ===== -->
+  <section class="hero section fade-section" id="hero">
+    <div class="badge"><i class="fas fa-bolt"></i> Live store review</div>
+    <h1>I Found an Issue on Your Store That Could Be Costing You Sales</h1>
+    <p class="subhead">
+      Thanks for replying <strong>YES</strong>. During my review, I identified an issue that may be reducing your store's visibility and affecting potential sales.
     </p>
-    <p class="sub-message">
-        Kindly choose any preferred communication channel.
-    </p>
+  </section>
 
-    <div class="btn-group">
-
-        <!-- Telegram -->
-        <a href="https://telegram.me/primalux0"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn btn-telegram">
-            <span class="icon">✈️</span>
-            <span class="label">Telegram</span>
-            <span class="arrow">→</span>
-        </a>
-
-        <!-- WhatsApp -->
-        <a href="https://wa.link/5p2aaz"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn btn-whatsapp">
-            <span class="icon">💬</span>
-            <span class="label">WhatsApp</span>
-            <span class="arrow">→</span>
-        </a>
-
+  <!-- ===== PRIVACY / SCREENSHOT PROTECTION ===== -->
+  <section class="section fade-section" id="privacy">
+    <div class="protected-note">
+      <i class="fas fa-shield-alt"></i>
+      <div>
+        <h3>Why the screenshot isn't shown</h3>
+        <p>Your review is specific to your store. To protect your store's information, I only share the screenshot and findings privately during our conversation.</p>
+      </div>
     </div>
+  </section>
 
+  <!-- ===== WHAT YOU'LL RECEIVE (4 cards) ===== -->
+  <section class="section fade-section" id="receive">
+    <h2 style="display: flex; align-items: center; gap: 0.5rem;">
+      <i class="fas fa-list-check icon-green" style="font-size: 1.5rem;"></i> What You'll Receive
+    </h2>
+    <div class="grid-4">
+      <div class="grid-item"><i class="fas fa-camera"></i><h4>Screenshot</h4><p>of the issue</p></div>
+      <div class="grid-item"><i class="fas fa-circle-exclamation"></i><h4>Explanation</h4><p>why it matters</p></div>
+      <div class="grid-item"><i class="fas fa-lightbulb"></i><h4>Recommended</h4><p>solution</p></div>
+      <div class="grid-item"><i class="fas fa-comments"></i><h4>Opportunity</h4><p>to ask questions</p></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section fade-section" id="cta">
+    <div class="card" style="background: #fafffd; border: 1px solid #d4e8de;">
+      <h2 style="font-size: 1.8rem; margin-bottom: 0.3rem;">Ready to See Your Store Review?</h2>
+      <p style="font-size: 1.05rem; color: #1b332b; max-width: 92%;">
+        Click the WhatsApp button below. I'll show you the screenshot, explain the issue, and walk you through the best way to fix it.
+      </p>
+      <div class="wa-btn-wrapper">
+        <a href="https://wa.link/5p2aaz" class="wa-btn" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Message on WhatsApp
+        </a>
+      </div>
+      <p class="wa-note"><i class="fas fa-lock" style="opacity: 0.5;"></i> private &amp; secure · reply within minutes</p>
+    </div>
+  </section>
+
+  <!-- ===== TRUST ===== -->
+  <section class="section fade-section" id="trust">
+    <div class="card" style="background: #fafffd; padding: 1.2rem 1.2rem;">
+      <div class="trust-list">
+        <span><i class="fas fa-check-circle"></i> Manual store review</span>
+        <span><i class="fas fa-check-circle"></i> Clear explanation</span>
+        <span><i class="fas fa-check-circle"></i> No obligation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section fade-section" id="faq">
+    <h2 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+      <i class="fas fa-circle-question icon-green" style="font-size: 1.4rem;"></i> FAQ
+    </h2>
+    <div class="card" style="padding-bottom: 0.2rem;">
+      <div class="faq-item">
+        <h4><i class="fas fa-image"></i> Why isn't the screenshot on this page?</h4>
+        <p>Because every review is unique and shared privately.</p>
+      </div>
+      <div class="faq-item">
+        <h4><i class="fas fa-clock"></i> How long does the review take?</h4>
+        <p>Usually 5–10 minutes.</p>
+      </div>
+      <div class="faq-item">
+        <h4><i class="fas fa-hand-peace"></i> Is there any obligation?</h4>
+        <p>No. You're free to decide what to do after seeing the review.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2026 Primal Lux Agency</p>
+  </footer>
 </div>
 
+<script>
+  (function() {
+    "use strict";
+
+    // ---------- SCROLL FADE (Intersection Observer) ----------
+    const fadeElements = document.querySelectorAll('.fade-section');
+
+    if (fadeElements.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -30px 0px'
+      });
+
+      fadeElements.forEach(el => observer.observe(el));
+
+      // pre-reveal hero if it's already visible
+      setTimeout(() => {
+        fadeElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.85) {
+            el.classList.add('visible');
+          }
+        });
+      }, 80);
+    }
+
+    // ---------- (optional) pulse already in CSS ----------
+    // ensure wa.link opens correctly
+    console.log('✅ WhatsApp link: https://wa.link/5p2aaz');
+  })();
+</script>
+
+<!-- small extra style polish -->
+<style>
+  .fa-check-circle { color: #1b8a4a; }
+  .grid-item i { transition: transform 0.2s; }
+  .grid-item:hover i { transform: scale(1.08); }
+  .badge i { color: #136b3a; }
+  .wa-btn i { transition: transform 0.2s; }
+  .wa-btn:hover i { transform: scale(1.05); }
+</style>
 </body>
 </html>
